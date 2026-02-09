@@ -11,7 +11,8 @@
     --text-light: hsl(0, 0%, 20%);
 
     --primary-dark: hsl(158, 83%, 16%);
-    --primary-light: hsl(158, 83%, 24%);
+    --primary: hsl(158, 83%, 24%);
+    --primary-light: hsl(158, 83%, 32%);
 }
 
 body {
@@ -27,7 +28,7 @@ body {
     color: var(--text-light);
 }
 
-/* LANDING PAGE */
+/* ========== LANDING PAGE ========== */
 #landing {
     background: var(--bg-dark);
     width: 100%;
@@ -85,7 +86,7 @@ body {
     margin: 68px 30px 0px 30px;
 }
 #headshot{
-    width: min(64%, 300px);
+    width: min(64%, 260px);
     border-radius: 50%;
     margin: 0;
 }
@@ -113,16 +114,32 @@ body {
     padding: 10px 0px;
     margin: 0;
 }
-#landing h4 {
+#intro h4 {
     margin-bottom: 0px;
     margin-right: auto;
     color: var(--primary-light);
 }
-#landing p {
+#intro p {
     margin: 0px;
     color: var(--text-light);
 }
-
+#intro a {
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    padding: 12px; 
+    margin-top: 28px;
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+    background-color: var(--primary-light);
+    transition: transform 0.2s ease;
+}
+#intro a:hover {
+    border-color: var(--primary-dark);
+    background-color: var(--primary);
+    transform: scale(1.05);
+}
+#intro a:active { transform: scale(.9); }
 
 @media (min-width: 800px) {
     #landing {
@@ -134,7 +151,7 @@ body {
         width: max(28vw, 400px);
     }
     #headshot {
-        width: min(64%, 400px)
+        width: min(32vw, 300px)
     }
     #intro {
         margin-left: 0;
@@ -144,7 +161,7 @@ body {
 
 }
 
-/* WORK EXPERINCE */
+/* ========== WORK EXPERINCE ========== */
 .timeline {
     position: relative;
     margin: 5vh auto;
