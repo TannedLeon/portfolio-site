@@ -1,0 +1,208 @@
+
+:root {
+    --bg-dark: hsl(0, 0%, 90%);
+    --bg: hsl(0, 0%, 95%);
+    --bg-light: hsl(0, 0%, 100%);
+
+    --border: hsl(0, 0%, 80%);
+
+    --text-dark: hsl(0, 0%, 0%);
+    --text: hsl(0, 0%, 10%);
+    --text-light: hsl(0, 0%, 20%);
+
+    --primary-dark: hsl(158, 83%, 16%);
+    --primary: hsl(158, 83%, 24%);
+    --primary-light: hsl(158, 83%, 32%);
+}
+
+body {
+    background: var(--bg-dark);
+    height: fit-content;
+    width: 100vw;
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: montserrat;
+    color: var(--text-light);
+}
+
+/* ========== LANDING PAGE ========== */
+#landing {
+    background: var(--bg-dark);
+    width: 100%;
+    height: 100dvh; /* For mobile devices. Dynamic view height. */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#landing nav {
+    height: 68px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+
+    background-color: hsl(var(--bg-light) / 0.35);
+    backdrop-filter: blur(12px);
+    
+    transition: box-shadow 0.5s ease;
+}
+#landing nav.scrolled {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+#landing nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    padding: 0px 12px;
+    font-size: 16px;
+}
+#rubik {
+    width: 44px;
+    margin-right: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+#rubik img {
+    width: 44px;
+    margin: 0;
+}
+#rubik:hover {transform: scale(1.10);}
+#rubik:active {transform: scale(.90);}
+
+#headshot-container {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: 68px 30px 0px 30px;
+}
+#headshot{
+    width: min(64%, 260px);
+    border-radius: 50%;
+    margin: 0;
+}
+
+#intro {
+    width: fit-content;
+    margin: 0px 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+#intro div {
+    height: 64px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+}
+#intro h2 {
+    font-size: 32px;
+    font-weight: normal;
+    width: fit-content;
+    padding: 10px 0px;
+    margin: 0;
+}
+#intro h4 {
+    margin-bottom: 0px;
+    margin-right: auto;
+    color: var(--primary-light);
+}
+#intro p {
+    margin: 0px;
+    color: var(--text-light);
+}
+#intro a {
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    padding: 12px; 
+    margin-top: 28px;
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+    background-color: var(--primary-light);
+    transition: transform 0.2s ease;
+}
+#intro a:hover {
+    border-color: var(--primary-dark);
+    background-color: var(--primary);
+    transform: scale(1.05);
+}
+#intro a:active { transform: scale(.9); }
+
+@media (min-width: 800px) {
+    #landing {
+        flex-direction: row;
+    }
+    #headshot-container {
+        margin: 0;
+        flex-grow: 0;
+        width: max(28vw, 400px);
+    }
+    #headshot {
+        width: min(32vw, 300px);
+    }
+    #intro {
+        margin-left: 0;
+        flex-grow: 0;
+        width: 36vw;
+    }
+
+}
+
+/* ========== WORK EXPERINCE ========== */
+.timeline {
+    position: relative;
+    margin: 5vh auto;
+    padding-left: 32px;
+    width: min(80vw, 500px);
+    border-left: 2px solid var(--border);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    }
+
+.timeline-dot {
+    position: absolute;
+    left: -43px;
+    width: 16px;
+    height: 16px;
+    background: var(--primary-light);
+    border: 2px solid var(--primary-dark);
+    border-radius: 50%;
+}
+
+.timeline-content {
+    background: var(--bg);
+    padding: 20px;
+    border-radius: 12px;
+}
+.timeline-content h3 {
+    margin: 0;
+}
+.timeline-content .date {
+    font-size: 12px;
+    color: var(--text-light);
+}
+.timeline-content p {
+    margin: 10px 0px;
+    color: var(--text);
+}
+.timeline-content ul {
+    margin: 10px 0px;
+    padding-left: 16px;
+    list-style-position:outside;
+}
